@@ -6,7 +6,6 @@ she can finish it by simply anyixia!
 '''
 
 import numpy as np
-import random
 from sklearn.datasets import load_boston
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.cross_validation import ShuffleSplit
