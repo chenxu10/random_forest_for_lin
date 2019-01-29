@@ -28,9 +28,11 @@ class LinProcessor(object):
 
 	def impurity(self):
 		print ("Features sorted by their score under impurity criteria:")
-		print (sorted(zip(map(lambda x: round(x, 4),
+		result = sorted(zip(map(lambda x: round(x, 4),
 			self.model.feature_importances_), self.names),
-			 reverse=True))
+			 reverse=True)
+		print (result)
+		return result
 
 	def permuate(self):
 		scores = defaultdict(list)
@@ -70,7 +72,9 @@ def main():
 
 	Solution = LinProcessor(X,y,names)
 	Solution.impurity()
+	print('-----------------------')
 	Solution.permuate()
+	print('-----------------------')
 	Solution.treeinterpreter()
 
 
